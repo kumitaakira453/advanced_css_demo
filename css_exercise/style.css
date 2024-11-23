@@ -1,0 +1,96 @@
+p {
+    margin: 0;
+}
+
+ul {
+    width: 90%;
+    margin: auto 5%;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul li {
+    list-style: none;
+    margin: 0.5rem 0;
+    width: 14%;
+}
+
+ul li>div {
+    background-color: rgb(187, 194, 197);
+    padding: 0 0.5rem;
+    height: 100%;
+    width: 80%;
+    text-align: center;
+    min-height: 8rem;
+}
+
+/* ul li>div>p:first-child {
+    font-weight: bold;
+}
+
+ul li>div>p:nth-of-type(2) {
+    font-weight: bold;
+    font-size: 35px;
+} */
+
+ul li:nth-of-type(7n + 1)>div>p:first-child {
+    color: rgb(213, 53, 53);
+}
+
+ul li:nth-of-type(7n)>div>p:first-child {
+    color: rgb(11, 146, 191);
+}
+
+ul li:nth-of-type(14)>div::after {
+    content: "Birthday";
+    font-weight: bold;
+    color: rgb(28, 19, 191);
+}
+
+ul li:nth-of-type(7n + 4) div div::after {
+    content: "課題";
+    color: rgb(17, 150, 17);
+}
+
+
+ul li:nth-of-type(9)>div {
+    background-color: #28c04a;
+}
+
+ul li:nth-of-type(9)>div::after {
+    content: "today";
+    font-weight: bold;
+    color: rgb(15, 100, 9);
+}
+
+ul li div div p:first-of-type {
+    color: rgb(207, 87, 40);
+}
+
+@media screen and (max-width: 768px) {
+    ul {
+        display: block;
+    }
+
+    ul li {
+        width: 100%;
+        height: auto;
+    }
+
+    ul li>div {
+        min-height: auto;
+        width: auto;
+        padding: 1rem;
+    }
+
+    /* 問題 8 */
+    ul li p+div p:first-of-type {
+        color: black;
+    }
+
+    ul li p+div p:nth-of-type(2),
+    ul li p+div p:nth-of-type(3) {
+        display: none;
+    }
+}
